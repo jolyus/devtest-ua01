@@ -1,0 +1,8 @@
+{
+    "/api/v1/devtest/*": {
+        "target": "https://devtest.bluedrive.io/",
+        "secure": true,
+        "logLevel": "debug",
+        "changeOrigin": true
+    }
+}

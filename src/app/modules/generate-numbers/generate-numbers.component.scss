@@ -1,0 +1,11 @@
+.generate-numbers-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  .mat-card {
+    width: 100%;
+    max-width: 800px;
+  }
+}

@@ -1,0 +1,30 @@
+<div class="generate-numbers-container">
+  <mat-card>
+    <mat-card-title style="margin-bottom: 20px"
+      >Generate Numbers</mat-card-title
+    >
+    <mat-card-content>
+      <button mat-raised-button color="primary" (click)="onGenerateNewNumber()">
+        Generate a new number
+      </button>
+
+      <mat-tab-group
+      (selectedTabChange)="onTabChange($event)">
+        <mat-tab label="Table">
+          <app-generated-numbers-table
+            [dataset]="results"
+            [columns]="columns"
+            [totalRows]="totalRows"
+            [isLoading]="isGeneratedNumbersLoading"
+            (paginationAction)="onPaginationAction($event)"
+          >
+          </app-generated-numbers-table>
+        </mat-tab>
+        <mat-tab label="Line Graph">
+          <app-generated-numbers-line-graph
+            [dataset]="lineGraphData"></app-generated-numbers-line-graph>
+        </mat-tab>
+      </mat-tab-group>
+    </mat-card-content>
+  </mat-card>
+</div>
