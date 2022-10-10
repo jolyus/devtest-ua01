@@ -29,7 +29,6 @@ export class GeneratedNumbersTableComponent implements OnInit, OnChanges, AfterV
 
   public dataSource?: MatTableDataSource<any>;
   public displayedColumns: Array<string> = [];
-  public pageNo = 0;
 
 
   constructor() { }
@@ -56,7 +55,8 @@ export class GeneratedNumbersTableComponent implements OnInit, OnChanges, AfterV
     this.paginator!.page
       .pipe(
         tap((event) => {
-          this.paginationAction.emit((event.pageIndex > this.pageNo) ? 'next' : 'prev')
+          console.log((event.previousPageIndex! > event.pageIndex) ? 'prev' : 'next')
+          this.paginationAction.emit((event.previousPageIndex! > event.pageIndex) ? 'prev' : 'next')
         })
       )
       .subscribe();
